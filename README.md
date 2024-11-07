@@ -15,4 +15,54 @@ The aim of this project was to perform a thorough vulnerability assessment on Me
 - Metasploit Framework: Utilizing pre-built modules and custom scripts to exploit identified vulnerabilities for more thorough penetration testing.
 
 ## Steps to Reproduce
-Processing.......(I will upload how to find those vulnerabilities and exploit it.)
+
+### FTP Backdoor (vsftpd)
+Exploitation Details:
+Module Used: exploit/unix/ftp/vsftpd_234_backdoor
+Steps:
+- Set target IP (RHOSTS) and port.
+- Run exploit to access a backdoor shell.
+
+![image](https://github.com/user-attachments/assets/ac76dde2-c328-4f6f-a043-42296e768b17)
+
+### Unsecured Telnet Service 
+Module Used: auxiliary/scanner/telnet/telnet_login
+Steps:
+- set RHOST (VM IP address)
+- set USER_FILE "Username file location"
+- set PASS_FILE "Password file location"
+
+setting up the requirements:
+![image](https://github.com/user-attachments/assets/26a76b2b-7bcb-4116-83c2-eaa10ca3956f)
+
+Bruteforcing and creating sessions:
+![image](https://github.com/user-attachments/assets/549bca94-edf2-4893-8ea9-e20ef0b418e5)
+![image](https://github.com/user-attachments/assets/b0900f3c-b018-44e5-b1af-40221dc4cb2b)
+
+Here we can see, two sessions has successfully created....!!!
+
+### Outdated SSH version
+The process is same like the previous one.
+Module Used: auxiliary/scanner/ssh/ssh_login
+Steps:
+- set RHOST (VM IP address)
+- set USER_FILE "Username file location"
+- set PASS_FILE "Password file location"
+
+![image](https://github.com/user-attachments/assets/3cffafe0-c023-4e80-beb9-38086223897b)
+
+### Samba Unauthenticated Access
+Module Used: auxiliary/scanner/ssh/ssh_login
+Steps:
+- set RHOST (VM IP address)
+- Execute the exploit to open a remote shell via Samba misconfiguration.
+
+![image](https://github.com/user-attachments/assets/be1303d3-5c8b-48e3-ab5c-f0a671ea4b01)
+
+### Bindshell Backdoor (Metasploitable root shell)
+
+![image](https://github.com/user-attachments/assets/11345c83-8e97-48a5-8ded-d23e1d0bbef6)
+
+
+
+
