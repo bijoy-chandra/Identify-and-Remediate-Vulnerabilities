@@ -39,9 +39,9 @@ setting up the requirements:
 
 Bruteforcing and creating sessions:
 ![image](https://github.com/user-attachments/assets/549bca94-edf2-4893-8ea9-e20ef0b418e5)
-![image](https://github.com/user-attachments/assets/b0900f3c-b018-44e5-b1af-40221dc4cb2b)
 
-Here we can see, two sessions has successfully created....!!!
+![image](https://github.com/user-attachments/assets/b0900f3c-b018-44e5-b1af-40221dc4cb2b)
+Unsecured Telnet service
 
 ### Outdated SSH version
 The process is same like the previous one.
@@ -110,6 +110,7 @@ Remote code Execution on Java RMI
 
 vncviewer 192.168.0.103 and password is "password" as you can see from previous screenshot.
 ![image](https://github.com/user-attachments/assets/43a5357f-8bae-4173-8fdd-87b876b31f8b)
+Unencrypted VNC Connection
 
 ### Tomcat Manager RCE
 - Module Used: exploit/multi/http/tomcat_mgr_upload
@@ -123,5 +124,13 @@ vncviewer 192.168.0.103 and password is "password" as you can see from previous 
 ![image](https://github.com/user-attachments/assets/a840412c-2101-42e4-8786-7bdead7f8b1e)
 Tomcat Manager RCE
 
+### Outdated PostgreSQL Database
+- Module Used: exploit/linux/postgres/postgres_payload
+- Steps:
+1.	Set LHOST
+2.	Set RHOST
+3.	Execute the exploit to obtain a remote shell.
 
+![image](https://github.com/user-attachments/assets/27c7cea3-ca04-4a60-87db-b92a31ce39d7)
+Outdated PostgreSQL Database
 
